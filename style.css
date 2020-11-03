@@ -22,3 +22,43 @@ body {
 .nav-links:hover {
   background-color: white;
 }
+
+main {
+  min-height: 90vh;
+  background-color: yellow;
+  border: 5px solid olive;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.landing {
+  min-height: 90vh;
+  border: 5px solid azure;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.child1 {
+  width: 20vw;
+  height: 50vh;
+  background-color: orchid;
+  position: relative;
+  top: 30%;
+  left: 40%;
+}
+
+.child2 {
+  width: 20vw;
+  height: 10vh;
+  background-color: black;
+  position: absolute;
+  top: 27%;
+  left: 40%;
+}
+.child3 {
+  width: 20vw;
+  height: 20vh;
+  background-color: green;
+  visibility: hidden;
+}
