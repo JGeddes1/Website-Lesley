@@ -7,58 +7,126 @@ body {
   background-color: aquamarine;
 }
 
-.nav-list {
-  display: flex;
-  border: 2px solid sienna;
-  justify-content: space-around;
-  flex-wrap: wrap;
+nav {
   height: 10vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.nav-list {
+  background-color: hotpink;
+  width: 80%;
+  justify-content: space-around;
   align-items: center;
+  display: flex;
+}
+
+.logo {
+  background-color: aqua;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logol {
+  font-size: 3rem;
 }
 .nav-links {
   background-color: purple;
   list-style: none;
+  font-size: 1.2em;
 }
 .nav-links:hover {
-  background-color: white;
+  //background-color: white;
 }
 
-main {
-  min-height: 90vh;
-  background-color: yellow;
-  border: 5px solid olive;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
 .landing {
-  min-height: 90vh;
-  border: 5px solid azure;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20vh;
+}
+
+.intro-text {
+  font-size: 1.4em;
+  padding-top: 3%;
+}
+
+.big-intro {
+  font-size: 3rem;
 }
 
 .child1 {
-  width: 20vw;
-  height: 50vh;
-  background-color: orchid;
-  position: relative;
-  top: 30%;
-  left: 40%;
+  background-color: burlywood;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
 }
 
 .child2 {
-  width: 20vw;
-  height: 10vh;
-  background-color: black;
-  position: absolute;
-  top: 27%;
-  left: 40%;
+  background-color: chartreuse;
+  grid-column: 2/4;
+  grid-row: 1/4;
+  align-self: center;
 }
-.child3 {
-  width: 20vw;
-  height: 20vh;
-  background-color: green;
-  visibility: hidden;
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    position: fixed;
+    background-color: antiquewhite;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+  }
+
+  .landing {
+    grid-template-columns: 10% 1fr 10%;
+  }
+  .child2 {
+    grid-column: 2/3;
+    grid-row: 2;
+    align-self: center;
+  }
+
+  .child1 {
+    grid-column: 2/3;
+    grid-row: 1;
+    text-align: center;
+  }
+  img {
+    object-fit: contain;
+    width: 100%;
+  }
 }
