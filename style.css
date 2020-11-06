@@ -4,19 +4,17 @@
   box-sizing: border-box;
 }
 body {
-  background-color: aquamarine;
 }
 
 nav {
   height: 10vh;
-  background-color: aliceblue;
+
   display: flex;
   justify-content: space-around;
   position: relative;
 }
 
 .nav-list {
-  background-color: hotpink;
   width: 80%;
   justify-content: space-around;
   align-items: center;
@@ -24,7 +22,6 @@ nav {
 }
 
 .logo {
-  background-color: aqua;
   width: 20%;
   display: flex;
   align-items: center;
@@ -32,10 +29,9 @@ nav {
 }
 
 #logol {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .nav-links {
-  background-color: purple;
   list-style: none;
   font-size: 1.2em;
 }
@@ -50,7 +46,7 @@ nav {
   grid-template-rows: 1fr 1fr 1fr;
   position: relative;
   overflow: hidden;
-  padding-top: 20vh;
+  margin-top: 1vh;
 }
 
 .intro-text {
@@ -63,15 +59,14 @@ nav {
 }
 
 .child1 {
-  background-color: burlywood;
   grid-column: 1/2;
   grid-row: 2/3;
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 .child2 {
-  background-color: chartreuse;
   grid-column: 2/4;
   grid-row: 1/4;
   align-self: center;
@@ -82,14 +77,59 @@ img {
   height: auto;
 }
 
+svg {
+  width: 100%;
+  height: auto;
+}
+
+#pen {
+  animation: pen 5s ease-in-out infinite alternate-reverse;
+  transform-origin: start;
+  transform-box: fill-box;
+}
+
+@keyframes pen {
+  from {
+    transform: rotateZ(-2deg);
+  }
+  to {
+    transform: rotateZ(7deg);
+  }
+}
+
+#right-arm {
+  animation: right-arm 5s ease-in-out infinite alternate-reverse;
+  transform-origin: start;
+  transform-box: fill-box;
+}
+
+@keyframes right-arm {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(5deg);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .nav-list {
     position: fixed;
-    background-color: antiquewhite;
+    background-color: rgb(160, 160, 160);
     height: 100vh;
     width: 100%;
     flex-direction: column;
-    display: none;
+    clip-path: circle(100px at 90% -30%);
+    -webkit-clip-path: circle(100px at 90% -30%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .nav-list.open {
+    clip-path: circle(1200px at 90% -10%);
+    -webkit-clip-path: circle(1200px at 90% -10%);
+    pointer-events: all;
   }
 
   nav {
@@ -102,6 +142,7 @@ img {
     right: 5%;
     top: 50%;
     transform: translate(-5%, -50%);
+    z-index: 2;
   }
 
   .line {
@@ -113,20 +154,44 @@ img {
 
   .landing {
     grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 1fr 2fr 1%;
+    overflow: visible;
+    padding-top: 10vh;
+  }
+
+  .svg-cont {
+    width: 100%;
   }
   .child2 {
-    grid-column: 2/3;
-    grid-row: 2;
-    align-self: center;
+    grid-column: 1/4;
+    grid-row: 2/3;
+    align-self: end;
   }
 
   .child1 {
     grid-column: 2/3;
     grid-row: 1;
     text-align: center;
+    font-size: 1em;
   }
   img {
     object-fit: contain;
     width: 100%;
+  }
+
+  .big-intro {
+    font-size: 2rem;
+  }
+
+  #logol {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    float: left;
+    justify-content: center;
   }
 }
