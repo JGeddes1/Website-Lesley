@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Contact</title>
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
     
-</body>
+    <title>Lesley Geddes Website</title>
+  </head>
+  <body>
+    <div class="circles">
+    <header>
+      <nav>
+        <div class="logo">
+          <h1 id="logol">Lesley Geddes</h1>
+        </div>
+
+        <ul class="nav-list">
+          <li class="nav-links"><a href="./index.html">Home </a></li>
+          <li class="nav-links"><a href="./Contact.html">Contact</a></li>
+          <li class="nav-links">Research</li>
+          <li class="nav-links">Publications</li>
+        </ul>
+
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+        
+        <section class="form">
+        
+            <div class="container">
+                <div id = "info" style="text-align:center">
+                  <h2>Contact Us</h2>
+                  <p>Any enquires about potential projects send me an email or leave a message:</p>
+                </div>
+                <div class="row">
+                  <div class="column">
+                  </div>
+                  <div class="column">
+                    <form name="form" netlify>
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" placeholder="Your name..">
+                      <label for="email">Email</label>
+                      <input type="text" id="email" name="email" placeholder="Your email..">
+                      
+                      <label for="subject">Subject</label>
+                      <textarea id="subject" name="subject" placeholder="Subject info.." style="height:170px"></textarea>
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+        </section>
+    
+    </main>
+</div>
+    <script src="./app.js"></script>
+  </body>
 </html>
